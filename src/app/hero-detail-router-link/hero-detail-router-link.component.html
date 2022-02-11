@@ -1,0 +1,10 @@
+hero-detail-router-link.component.html
+<div *ngIf="heroDetailRouterLink">
+  <h2>{{heroDetailRouterLink.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{heroDetailRouterLink.id}}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="heroDetailRouterLink.name" placeholder="Hero name"/>
+  </div>
+  <button (click)="goBack()">go back</button>
+</div>

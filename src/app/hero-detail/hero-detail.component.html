@@ -1,0 +1,21 @@
+hero-detail.component.html
+<div *ngIf="heroMock">
+  <h2>hero__</h2>
+  <h2>{{heroMock.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{heroMock.id}}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="heroMock.name" placeholder="name">
+  </div>
+</div>
+
+<div *ngIf="heroService">
+  <h2>heroService</h2>
+
+  <h2>{{heroService.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{heroService.id}}</div>
+  <div>
+    <label for="heroService-name">Hero name: </label>
+    <input id="heroService-name" [(ngModel)]="heroService.name" placeholder="name">
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<h2>My Heroes</h2>
+heroes-router-link.component.html
+<ul class="heroes">
+  <li *ngFor="let hero of heroesRouterLink">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+  </li>
+</ul>

@@ -1,0 +1,59 @@
+heroes.component.html
+<!--單比資料繫結-->
+
+<table>
+  <tbody>
+  <tr>
+    <h2>{{hero}}</h2><!--[object Object]-->
+    <h2>{{hero.name | uppercase}} Details</h2>
+  </tr>
+  <tr>
+    <div><span>id:</span>{{hero.id}}</div>
+    <div><span>name:</span>{{hero.name}}</div>
+    <div>
+      <label for="name">Hero name: </label>
+      <input id="name" [(ngModel)]="hero.name" placeholder="name">
+    </div>
+  </tr>
+
+  </tbody>
+</table>
+
+
+
+<!--<div *ngIf="selectedHeros">-->
+<!--  <h2>{{selectedHeros.name | uppercase}} Details</h2>-->
+<!--  <div><span>id: </span>{{selectedHeros.id}}</div>-->
+<!--  <div>-->
+<!--    <label for="hero-name">Hero name: </label>-->
+<!--    <input id="hero-name" [(ngModel)]="selectedHeros.name" placeholder="name">-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--透過標籤傳參數:[hero]接口傳遞-->
+<table>
+  <tr>
+    <td>
+      <!--多筆資料繫結-->
+      <h2>My Heroes MOCK</h2>
+      <ul class="heroes">
+        <li [class.selected]="hero_ === selectedHerosMock" *ngFor="let hero_ of heroesMockData" (click)="onSelectMock(hero_)">
+          <span class="badge">{{hero_.id}}</span> {{hero_.name}}
+        </li>
+      </ul>
+      <app-hero-detail [heroMock]="selectedHerosMock"></app-hero-detail>
+    </td>
+    <td>
+      <!--多筆資料繫結-->
+      <h2>My Heroes SERVICE</h2>
+      <ul class="heroes">
+        <li [class.selected]="hero_ === selectedHeroesService" *ngFor="let hero_ of heroesServiceData" (click)="onSelectService(hero_)">
+          <span class="badge">{{hero_.id}}</span> {{hero_.name}}
+        </li>
+      </ul>
+      <app-hero-detail [heroService]="selectedHeroesService"></app-hero-detail>
+    </td>
+  </tr>
+</table>
+
+
